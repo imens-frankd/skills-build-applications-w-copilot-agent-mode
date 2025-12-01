@@ -1,5 +1,18 @@
+
+body {
+  background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+  min-height: 100vh;
+}
+
 .App {
   text-align: center;
+  color: #22223b;
+}
+
+.octofit-logo {
+  height: 48px;
+  margin-right: 16px;
+  vertical-align: middle;
 }
 
 .App-logo {
@@ -7,25 +20,114 @@
   pointer-events: none;
 }
 
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
 
+
 .App-header {
-  background-color: #282c34;
+  background-color: #22223b;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #f2e9e4;
 }
 
-.App-link {
-  color: #61dafb;
+
+.App-link, .navbar a, .nav-link {
+  color: #4a4e69 !important;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.App-link:hover, .navbar a:hover, .nav-link:hover {
+  color: #9a8c98 !important;
+}
+
+.navbar {
+  background: linear-gradient(90deg, #4a4e69 0%, #9a8c98 100%) !important;
+  box-shadow: 0 2px 8px rgba(74, 78, 105, 0.1);
+}
+.navbar-brand {
+  color: #f2e9e4 !important;
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.navbar-nav .nav-link.active {
+  color: #f2e9e4 !important;
+}
+
+h1, h2, h3, h4, h5 {
+  color: #22223b;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.table {
+  background: #f8f9fa;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.table th {
+  background: #9a8c98;
+  color: #fff;
+}
+.table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: #e0eafc;
+}
+.table-striped > tbody > tr:nth-of-type(even) {
+  background-color: #f2e9e4;
+}
+
+.btn, .btn-primary {
+  background: #4a4e69;
+  border: none;
+  color: #f2e9e4;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+.btn:hover, .btn-primary:hover {
+  background: #9a8c98;
+  color: #22223b;
+}
+
+.card {
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(74, 78, 105, 0.08);
+  border: none;
+}
+.card-title {
+  font-size: 2rem;
+  font-weight: 600;
+}
+.card-body {
+  background: #fff;
+  border-radius: 12px;
+}
+
+/* Modal styling */
+.modal-content {
+  border-radius: 16px;
+  background: #f8f9fa;
+}
+.modal-header {
+  background: #4a4e69;
+  color: #f2e9e4;
+  border-bottom: none;
+}
+.modal-footer {
+  border-top: none;
+}
+
+/* Form styling */
+.form-control:focus {
+  border-color: #9a8c98;
+  box-shadow: 0 0 0 0.2rem rgba(154, 140, 152, 0.25);
 }
 
 @keyframes App-logo-spin {
