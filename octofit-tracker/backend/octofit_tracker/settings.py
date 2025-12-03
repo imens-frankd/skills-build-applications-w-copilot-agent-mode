@@ -22,11 +22,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-kcr2q40lh$6gp%*@unde7ed#cb!#+tpx74d17$r+0np#^t)k4i'
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-kcr2q40lh$6gp%*@unde7ed#cb!#+tpx74d17$r+0np#^t)k4i')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+# Raise error if using default secret key in production
+if not DEBUG and SECRET_KEY == 'django-insecure-kcr2q40lh$6gp%*@unde7ed#cb!#+tpx74d17$r+0np#^t)k4i':
+    raise RuntimeError("SECRET_KEY must be set in environment variable DJANGO_SECRET_KEY for production!")
 import os
 CODESPACE_NAME = os.environ.get('CODESPACE_NAME')
 ALLOWED_HOSTS = ['localhost', '127.0.0.1']
