@@ -95,12 +95,18 @@ DATABASES = {
     }
 }
 # CORS settings
-CORS_ALLOW_ALL_ORIGINS = True
+# WARNING: Allowing all origins is insecure for production!
+# This setting is for development only. In production, set CORS_ALLOWED_ORIGINS to a list of allowed domains.
+if DEBUG:
+    CORS_ALLOW_ALL_ORIGINS = True
+else:
+    CORS_ALLOW_ALL_ORIGINS = False
+    # Example: CORS_ALLOWED_ORIGINS = [
+    #     "https://your-production-frontend.com",
+    # ]
 CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOW_HEADERS = ['*']
 CORS_ALLOW_METHODS = ['*']
-
-
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 
